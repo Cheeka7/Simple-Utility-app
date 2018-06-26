@@ -2,10 +2,6 @@
 
 A basic Ionic 3 application with the following features:
 
-  A countdown clock set to a specific date.
-  Push notifications with a reminder for the countdown date.
-  A simple note editor where user can add, view and delete their notes.
-  
-  
-  
-  
+    i. A countdown clock set to a specific date.
+    ii. Push notifications with a reminder for the countdown date.
+    iii. A simple note editor where user can add, view and delete their notes.
