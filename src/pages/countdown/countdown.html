@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Countdown
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="timer" *ngIf="difference > 0">
+    <span>{{days}}</span>days
+    <span>{{hours}}</span>hrs
+    <span>{{minutes}}</span>mins
+    <span>{{seconds}}</span>secs
+  </div>
+
+  <div class="timer timer-over" *ngIf="difference <= 0">
+    Game over!
+  </div>
+</ion-content>

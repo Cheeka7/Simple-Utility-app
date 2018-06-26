@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>view-note</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div class="top-container">
+    <div class="delete">
+      <ion-icon name="ios-trash-outline" (click)="deleteNote(note.createDate)"></ion-icon>
+    </div>
+    <div class="save">
+      <ion-icon name="ios-checkmark-circle-outline" (click)="updateNote(note)"></ion-icon>
+    </div>
+  </div>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        {{ note.title }}
+      </ion-card-title>
+      <div class="note-date">{{ note.date }}</div>
+      <hr />
+      <div><textarea class="input-text" [(ngModel)] = 'note.content'></textarea></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
