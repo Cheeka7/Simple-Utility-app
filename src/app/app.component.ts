@@ -20,9 +20,6 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,  public localNotifications: LocalNotifications,
     public alertCtrl: AlertController) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-
       statusBar.styleDefault();
       splashScreen.hide();
     });
@@ -40,10 +37,10 @@ export class MyApp {
     this.minutes = Math.floor(this.seconds / 60);
     this.hours = Math.floor(this.minutes / 60);
     this.days = Math.floor(this.hours / 24);
-
     let targetSeconds = now.getSeconds();
     let targetMinutes = now.getMinutes();
     let targetHour = now.getHours();
+    // push notification to the user in the following days
     if(this.days === 150 || this.days === 100 || this.days == 75 || this.days === 50 || this.days === 25 || this.days === 10) {
       if(targetHour == 10 && targetMinutes == 33 && targetSeconds == 0) {
         this.notification(this.days);
@@ -53,6 +50,7 @@ export class MyApp {
   }
 
   notification(days) {
+    // push notifications setup
     this.localNotifications.requestPermission().then((permission) => {
       this.localNotifications.schedule({
          id: 1,

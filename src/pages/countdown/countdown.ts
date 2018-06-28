@@ -21,7 +21,8 @@ export class CountdownPage implements OnInit {
 
   ngOnInit(): void {
     let timer: any;
-    let compareDate = new Date("2018-12-12");
+    //countdown set to new year 2019
+    let compareDate = new Date("2019-01-01");
     setInterval( () => this.timeBetweenDates(compareDate), 1000 );
   }
 
@@ -33,10 +34,9 @@ export class CountdownPage implements OnInit {
 
        if (this.difference <= 0) {
           return;
-         // Timer done
-         // clearInterval(timer);
 
        } else {
+         // calculating the time left
          this.seconds = Math.floor(this.difference / 1000);
          this.minutes = Math.floor(this.seconds / 60);
          this.hours = Math.floor(this.minutes / 60);
